@@ -7,3 +7,14 @@ The purposes of this project is to provide a way to record chess game time.
 - The timer needs to be synchronized with the two devices;
 - In the end, maybe a statistical graph can be shown.
 
+### 
+
+#### Starting
+- Clone this repository;
+- To Build docker run on terminal:
+```
+$ docker-compose build
+```
+```
+$ docker-compose up -d
+```
