@@ -1,3 +1,11 @@
+
+###> symfony/framework-bundle ###
+/.env
+/public/bundles/
+/var/
+/vendor/
+###< symfony/framework-bundle ###
+
 # Cache and logs (Symfony2)
 /app/cache/*
 /app/logs/*

@@ -1,0 +1,39 @@
+version: '3'
+services:
+    apache:
+        build: .docker/apache
+        container_name: timerchess_apache
+        ports:
+          - 80:80
+        volumes:
+          - .docker/config/vhosts:/etc/apache2/sites-enabled
+          - .:/home/wwwroot/timerchess
+        depends_on:
+          - php
+
+    mysql:
+        image: mysql
+        container_name: timerchess_mysql
+        volumes:
+            - .docker/data/db:/var/lib/mysql
+        environment:
+            MYSQL_ROOT_PASSWORD: root
+            MYSQL_DATABASE: timerchess
+            MYSQL_USER: player
+            MYSQL_PASSWORD: playerchess
+
+    php:
+        build: .docker/php
+        container_name: timerchess_php
+        volumes:
+          - .:/home/wwwroot/timerchess
+        depends_on:
+          - mysql
+
+    phpmyadmin:
+        image: phpmyadmin/phpmyadmin
+        container_name: timerchess_phpmyadmin
+        ports:
+            - 8080:80
+        links:
+            - mysql
