@@ -18,13 +18,15 @@ The purposes of this project is to provide a way to record chess game time.
     $ docker-compose up -d
     ```
     Now we need to check if the VM is running:
-        ```
-        $ docker ps
-        ``` 
+    
+    ```
+    $ docker ps
+    ```
     Verify that the VM name has been listed, if not, please run the command to start them:
-        ```
-        $ ./run-mac.sh
-        ``` 
+    
+    ```
+    $ ./run-mac.sh
+    ```
 - Now you need to connect on timerchess_php:
 
     ```
